@@ -12,7 +12,7 @@ Ideally, researchers can use a large sample size to decrease both their Type I a
 
 In pre-clinical and clinical trials, power analyses are routinely applied to calculate the optimal amount of test subjects needed. The goal is to minimise the number of test subjects while at the same time minimising the probabilities of Type I and Type II errors
 
-min N = (\sigma^2 * (z_{\alpha}+z_{\beta})^2) / (\tau)
+min N = $(\sigma^2 * (z_{\alpha}+z_{\beta})^2) / (\tau)$
 
 Randomisation examples: 
 - sex
