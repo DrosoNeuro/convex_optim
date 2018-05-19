@@ -8,32 +8,16 @@ In the Neyman Pearson framework, the maximally acceptable errors are fixed befor
 
 Ideally, researchers can use a large sample size to decrease both their Type I and Type II errors.However, in a setting like animal research, large sample sizes can be considered as problematic due to animal ethics concerns. On the other hand, experiments with large Type I or Type II errors diminish the trustworthiness of the respective research results and increase the risk of non-reproducibility, which is ethically problematic as well since it hampers translation and might have potentially dangerous effects for human subjects in clinical trials.
 
+<sup>1</sup>Please not that NHST is theoretically problematic amalgamation of the Neyman-Pearason hypothesis testing framework and the Fisher hypothesis framework.It is advised to refrain from using NHST in the first place, since it often leads to inconsistent and scientifically invalid inferences. However, NHST is the predominantly used method in many areas of science, hence it is included in this analysis.
+
 ## Description of the problem (rough)
 
 In pre-clinical and clinical trials, power analyses are routinely applied to calculate the optimal amount of test subjects needed. The goal is to minimise the number of test subjects while at the same time minimising the probabilities of Type I and Type II errors
 
-min N = $$(\sigma^2 * (z_{\alpha}+z_{\beta})^2) / (\tau)$$
+min N = $$(\sigma^2 * (z_{\alpha}+z_{\beta})^2) / (\tau)^2$$
+s.t.
+$$z_{\alpha} >= 1.96$$ (threshold value for alpha = 5%)
+$$z_{\beta} >= 1.28$$ (threshold value of beta = 20%)
+$$z_{\alpha} + z_{\beta}*ratio >= 2*1.96$$
 
-Randomisation examples: 
-- sex
-- age
-- place of living
-- socio-economic status
-- behavioural factors
-etc.
-
-
-min amount of subjects
-N = 2
-
-<sup>1</sup>Please not that NHST is theoretically problematic amalgamation of the Neyman-Pearason hypothesis testing framework and the Fisher hypothesis framework.It is advised to refrain from using NHST in the first place, since it often leads to inconsistent and scientifically invalid inferences. However, NHST is the predominantly used method in many areas of science, hence it is included in this analysis.
-
-s.t. 
-power >= x
-typeI error rate <= y
-effect >= z
-
-maleA - maleB = 0
-femaleA - femaleB = 0
-etc.
-
+Goal: Reformulate the problem as a minmax detector problem
